@@ -1,4 +1,4 @@
-#load all the things. 
+#load all the things.
 import os
 import json
 
@@ -10,18 +10,24 @@ value = json['value']
 line = 0
 #make a list
 hash = []
-#count some lines. 
+#count some lines.
 length = len(value)
+
+
 for x in value:
     line = line + 1
+    #Print output
     print(json['value'][line]['MD5'])
     hash.append(json['value'][line]['MD5'])
-    if line >= (length -1):
+    if line >= (length - 1):
         break
+
+print("\n")
+print(str(line) + " lines have been added to the list.")
+print("Commence writing text file now")
 
 ## Le debug
 ##print(hash)
-
 
 outF = open("Hash.txt", "w")
 for z in hash:
@@ -29,3 +35,5 @@ for z in hash:
   outF.write(z)
   outF.write("\n")
 outF.close()
+
+print("\nWriting text file complete\n")
